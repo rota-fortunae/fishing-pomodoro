@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://bnrcf87dgowbp"]
 
 [ext_resource type="Texture2D" uid="uid://dp2q7aj0cgvwb" path="res://art/fishtankframe.png" id="1_mubi1"]
+[ext_resource type="Script" uid="uid://b6slsl75h651r" path="res://aquarium/fish_minigame.gd" id="1_uitoa"]
 
 [node name="Node2D" type="Control" unique_id=421851226]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 128.0
 offset_bottom = 128.0
+script = ExtResource("1_uitoa")
 
 [node name="NinePatchRect2" type="NinePatchRect" parent="." unique_id=1980824269]
 layout_mode = 1
