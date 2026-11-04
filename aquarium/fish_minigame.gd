@@ -6,6 +6,7 @@ var fisher_location = Vector2(32, 72)
 var fishing = false
 var sprite_list = []
 var arrow_list = []
+var fish_difficulty = 10
 
 func _ready() -> void:
 	pass
@@ -26,7 +27,9 @@ func start_fishing():
 	arrow_list = []
 	sprite_list = []
 	
-	for i in range(randi_range(2, 10)):
+	fish_difficulty = randi_range(2, 10)
+	
+	for i in range(fish_difficulty):
 		arrow_list.append(directions[randi_range(1, 4)])
 	print(arrow_list)
 	
@@ -70,15 +73,27 @@ func go_fishing():
 
 	elif arrow_list.size() == 0:
 		fishing = false
+		
+		$Sprite2D/new_fish.texture = load("res://art/fish/"+select_fish(fish_difficulty)+".png")
 		new_fish_display.visible = true
 		print("finished fishing")
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+
+func select_fish(difficulty):
+	var trash = ["seaweed"]
+	var basic = ["seaweed"]
+	var uncommon = ["butterfish"]
+	var legendary = ["butterfish"]
+	
+	if difficulty < 8:
+		if randi_range(1,5) == 5:
+			return trash[randi_range(0,trash.size()-1)]
+		else:
+			if difficulty < 6:
+				return basic[randi_range(0, basic.size()-1)]
+			else:
+				return uncommon[randi_range(0, uncommon.size()-1)]
+	else:
+		if randi_range(1,20) == 20:
+			return trash[randi_range(0,trash.size()-1)]
+		else:
+			return legendary[randi_range(0, legendary.size()-1)]

@@ -70,7 +70,7 @@ position = Vector2(-59.39284, -58.159145)
 scale = Vector2(0.058342673, 0.074850895)
 sprite_frames = SubResource("SpriteFrames_ip871")
 
-[node name="Sprite2D" type="Sprite2D" parent="Sprite2D" unique_id=1717322628]
+[node name="new_sticker" type="Sprite2D" parent="Sprite2D" unique_id=1717322628]
 position = Vector2(-58.459354, -59.581303)
 scale = Vector2(0.058342673, 0.0748509)
 texture = ExtResource("5_vbd3h")
