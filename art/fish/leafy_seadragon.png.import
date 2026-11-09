@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d032h7cgxeo1w"
-path="res://.godot/imported/test_fish_big.png-1c9ed58f476f94bb773be8cc3a2c3a06.ctex"
+uid="uid://brxo6pq5444dt"
+path="res://.godot/imported/leafy_seadragon.png-c0fc453ca5ff870b9414565d51314bca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/test_fish_big.png"
-dest_files=["res://.godot/imported/test_fish_big.png-1c9ed58f476f94bb773be8cc3a2c3a06.ctex"]
+source_file="res://art/fish/leafy_seadragon.png"
+dest_files=["res://.godot/imported/leafy_seadragon.png-c0fc453ca5ff870b9414565d51314bca.ctex"]
 
 [params]
 

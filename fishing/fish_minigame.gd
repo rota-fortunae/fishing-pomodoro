@@ -1,5 +1,8 @@
 extends Node
 
+
+
+
 var directions = {1: "up", 2: "down", 3: "right", 4: "left"}
 @onready var new_fish_display = $Sprite2D
 var fisher_location = Vector2(32, 72)
@@ -62,30 +65,36 @@ func go_fishing():
 					var tween = create_tween().set_parallel(true)
 					for i in range(sprite_list.size()):
 						tween.tween_property(sprite_list[i], "position", sprite_list[i].position - Vector2(18, 0), 0.15).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
-			else:
+			else: #failed game
 				$AudioStreamPlayer.stream=load("res://art/fail.mp3")
 				$AudioStreamPlayer.play()
-				print("failed game")
+				Globals.fishing_streak = 0
 				fishing = false
 				for i in range (len(arrow_list)):
 					arrow_list.pop_at(0)
 					sprite_list.pop_at(0).queue_free()
 
-	elif arrow_list.size() == 0:
+	elif arrow_list.size() == 0: # won game
 		fishing = false
-		
-		$Sprite2D/new_fish.texture = load("res://art/fish/"+select_fish(fish_difficulty)+".png")
+		var newfish = select_fish(fish_difficulty)
+		$Sprite2D/new_fish.texture = load("res://art/fish/"+newfish+".png")
 		new_fish_display.visible = true
-		print("finished fishing")
+		if newfish in Globals.inventory_fish.keys():
+			Globals.inventory_fish[newfish][0] += 1
+		else:
+			Globals.inventory_fish[newfish] = [1, 0, 0]
+			
+		Globals.fishing_streak += 1
+		
 
 func select_fish(difficulty):
 	var trash = ["seaweed"]
-	var basic = ["seaweed"]
-	var uncommon = ["butterfish"]
-	var legendary = ["butterfish"]
+	var basic = ["butterfish"]
+	var uncommon = ["blowfish"]
+	var legendary = ["leafy_seadragon"]
 	
 	if difficulty < 8:
-		if randi_range(1,5) == 5:
+		if randi_range(1,10) == 5:
 			return trash[randi_range(0,trash.size()-1)]
 		else:
 			if difficulty < 6:
