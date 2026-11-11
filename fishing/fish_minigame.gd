@@ -1,8 +1,6 @@
 extends Node
 
 
-
-
 var directions = {1: "up", 2: "down", 3: "right", 4: "left"}
 @onready var new_fish_display = $FishDisplay
 var fisher_location = Vector2(32, 72)
@@ -15,16 +13,15 @@ func _ready() -> void:
 	pass
 
 func _process(delta: float) -> void:
+	
 	if fishing:
 		go_fishing()
 		
 	if not fishing && Input.is_action_just_pressed("up"):
-		new_fish_display.visible = false
 		fishing = true
 		start_fishing()
 		
 	
-
 func start_fishing():
 	arrow_list = []
 	sprite_list = []
@@ -38,11 +35,12 @@ func start_fishing():
 	for arrow_index in range(arrow_list.size()):
 		var new_sprite = Sprite2D.new()
 		sprite_list.append(new_sprite)
-		add_child(new_sprite)
+		$ArrowLayer.add_child(new_sprite)
 		
 		new_sprite.texture = load("res://art/" + arrow_list[arrow_index] + "_arrow.png")
 		new_sprite.position = fisher_location + Vector2(18 * (arrow_index + 1), 0)
 		new_sprite.visible = true
+		new_sprite.z_as_relative = 0
 
 func go_fishing():
 	if arrow_list.size() > 0:
@@ -74,18 +72,11 @@ func go_fishing():
 					sprite_list.pop_at(0).queue_free()
 
 	elif arrow_list.size() == 0: # won game
+		
 		fishing = false
 		var newfish = select_fish(fish_difficulty)
-		$FishDisplay/new_fish.texture = load("res://art/fish/"+newfish+".png")
-		new_fish_display.visible = true
-		if newfish in Globals.inventory_fish.keys():
-			$FishDisplay/new_sticker.visible = false
-			Globals.inventory_fish[newfish][0] += 1
-		else:
-			$FishDisplay/new_sticker.visible = true
-			Globals.inventory_fish[newfish] = [1, 0, 0]
-			
-		Globals.fishing_streak += 1
+		
+		Globals.caught_fish(newfish, (newfish not in Globals.inventory_fish.keys()))
 		
 
 func select_fish(difficulty):
