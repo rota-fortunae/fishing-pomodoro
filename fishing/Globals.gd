@@ -4,7 +4,7 @@ extends Node2D
 
 # "name": [regular, gold, shiny]
 @onready var inventory_fish = {
-	"seaweed": [1, 0, 0]
+	
 }
 
 @onready var fishing_streak = 0

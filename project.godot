@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="fishing-pomodoro-godot"
-run/main_scene="res://aquarium/main.tscn"
+run/main_scene="res://fishing/fishing.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

@@ -21,7 +21,6 @@ func _process(delta: float) -> void:
 	if not fishing && Input.is_action_just_pressed("up"):
 		new_fish_display.visible = false
 		fishing = true
-		print("starting fishing")
 		start_fishing()
 		
 	
@@ -80,8 +79,10 @@ func go_fishing():
 		$Sprite2D/new_fish.texture = load("res://art/fish/"+newfish+".png")
 		new_fish_display.visible = true
 		if newfish in Globals.inventory_fish.keys():
+			$Sprite2D/new_sticker.visible = false
 			Globals.inventory_fish[newfish][0] += 1
 		else:
+			$Sprite2D/new_sticker.visible = true
 			Globals.inventory_fish[newfish] = [1, 0, 0]
 			
 		Globals.fishing_streak += 1
