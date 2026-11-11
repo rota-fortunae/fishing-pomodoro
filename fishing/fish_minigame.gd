@@ -4,7 +4,7 @@ extends Node
 
 
 var directions = {1: "up", 2: "down", 3: "right", 4: "left"}
-@onready var new_fish_display = $Sprite2D
+@onready var new_fish_display = $FishDisplay
 var fisher_location = Vector2(32, 72)
 var fishing = false
 var sprite_list = []
@@ -76,13 +76,13 @@ func go_fishing():
 	elif arrow_list.size() == 0: # won game
 		fishing = false
 		var newfish = select_fish(fish_difficulty)
-		$Sprite2D/new_fish.texture = load("res://art/fish/"+newfish+".png")
+		$FishDisplay/new_fish.texture = load("res://art/fish/"+newfish+".png")
 		new_fish_display.visible = true
 		if newfish in Globals.inventory_fish.keys():
-			$Sprite2D/new_sticker.visible = false
+			$FishDisplay/new_sticker.visible = false
 			Globals.inventory_fish[newfish][0] += 1
 		else:
-			$Sprite2D/new_sticker.visible = true
+			$FishDisplay/new_sticker.visible = true
 			Globals.inventory_fish[newfish] = [1, 0, 0]
 			
 		Globals.fishing_streak += 1
@@ -90,9 +90,9 @@ func go_fishing():
 
 func select_fish(difficulty):
 	var trash = ["seaweed"]
-	var basic = ["butterfish"]
-	var uncommon = ["blowfish"]
-	var legendary = ["leafy_seadragon"]
+	var basic = ["butterfish", "brook_trout", "coral_trout", "regal_blue_tang"]
+	var uncommon = ["blowfish", "moon_jellyfish"]
+	var legendary = ["leafy_seadragon", "deep_sea_isopod"]
 	
 	if difficulty < 8:
 		if randi_range(1,10) == 5:

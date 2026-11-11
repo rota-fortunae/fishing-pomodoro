@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://m6xcw0ytqhhg" path="res://art/new_sign.png" id="6_khi3d"]
 [ext_resource type="Shader" uid="uid://cimyog6cr8wpl" path="res://art/outline.gdshader" id="7_42ve5"]
 [ext_resource type="Texture2D" uid="uid://d032h7cgxeo1w" path="res://art/fish/blowfish.png" id="8_ubjn2"]
-[ext_resource type="FontFile" uid="uid://cs8us738dhk7f" path="res://art/TinyUnicode.ttf" id="9_wb7v2"]
+[ext_resource type="LabelSettings" uid="uid://bkn2bfg2pvwmc" path="res://small_label_settings.tres" id="9_sqpqj"]
 [ext_resource type="Script" uid="uid://ba21ntmmdf3yd" path="res://fishing/label.gd" id="10_7nlyu"]
 
 [sub_resource type="AudioStreamMP3" id="AudioStreamMP3_uitoa"]
@@ -33,9 +33,6 @@ shader_parameter/pattern = 0
 shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/number_of_images = Vector2(1, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_1gr4i"]
-font = ExtResource("9_wb7v2")
 
 [node name="Fishing" type="Control" unique_id=421851226]
 layout_mode = 3
@@ -67,33 +64,41 @@ axis_stretch_vertical = 1
 stream = SubResource("AudioStreamMP3_uitoa")
 volume_db = -0.59
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2103787638]
-visible = false
+[node name="FishDisplay" type="Sprite2D" parent="." unique_id=2103787638]
 self_modulate = Color(1, 1, 1, 0.48235294)
 position = Vector2(1081, 834.99994)
 scale = Vector2(17.140114, 13.359895)
 texture = ExtResource("4_4r7pl")
 
-[node name="surprise" type="AnimatedSprite2D" parent="Sprite2D" unique_id=126184699]
+[node name="surprise" type="AnimatedSprite2D" parent="FishDisplay" unique_id=126184699]
 position = Vector2(-59.39284, -58.159145)
 scale = Vector2(0.058342673, 0.074850895)
 sprite_frames = SubResource("SpriteFrames_ip871")
 
-[node name="new_sticker" type="Sprite2D" parent="Sprite2D" unique_id=1717322628]
+[node name="new_sticker" type="Sprite2D" parent="FishDisplay" unique_id=1717322628]
 position = Vector2(-58.459354, -59.581303)
 scale = Vector2(0.058342673, 0.0748509)
 texture = ExtResource("6_khi3d")
 
-[node name="new_fish" type="Sprite2D" parent="Sprite2D" unique_id=263703665]
+[node name="new_fish" type="Sprite2D" parent="FishDisplay" unique_id=263703665]
 material = SubResource("ShaderMaterial_ip871")
 position = Vector2(-59.45118, -58.233986)
 scale = Vector2(0.058342673, 0.0748509)
 texture = ExtResource("8_ubjn2")
+
+[node name="Label2" type="Label" parent="." unique_id=1277629347]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 71.0
+offset_right = 80.0
+offset_bottom = 94.0
+text = "blowfish"
+label_settings = ExtResource("9_sqpqj")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1877631891]
 
 [node name="Label" type="Label" parent="CanvasLayer" unique_id=430955176]
 offset_right = 40.0
 offset_bottom = 23.0
-label_settings = SubResource("LabelSettings_1gr4i")
+label_settings = ExtResource("9_sqpqj")
 script = ExtResource("10_7nlyu")

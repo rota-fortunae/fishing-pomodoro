@@ -1,0 +1,6 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://bkn2bfg2pvwmc"]
+
+[ext_resource type="FontFile" uid="uid://cs8us738dhk7f" path="res://art/TinyUnicode.ttf" id="1_ongga"]
+
+[resource]
+font = ExtResource("1_ongga")
