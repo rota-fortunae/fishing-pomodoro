@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dd7dfhwokejoj"]
+
+[ext_resource type="Texture2D" uid="uid://dp2q7aj0cgvwb" path="res://art/fishtankframe.png" id="1_awalw"]
+
+[node name="Aquarium" type="Control" unique_id=248952296]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1716307161]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_awalw")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 15

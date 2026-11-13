@@ -3,9 +3,15 @@ extends Node2D
 @export var saving = false
 
 # "name": [regular, gold, shiny]
-@onready var inventory_fish = {
-	
-}
+#@onready var inventory_fish = {
+	#
+#}
+@onready var inventory_fish = { "seaweed": [2, 0, 0], "humuhumunukunukuapua\'a": [2, 0, 0], "spotted_eagle_ray": [1, 0, 0], "brook_trout": [2, 0, 0], "deep_sea_isopod": [1, 0, 0], "horseshoe_crab": [2, 0, 0], "regal_blue_tang": [3, 0, 0], "sunfish": [3, 0, 0], "butterfish": [1, 0, 0] }
+
+ 
+@onready var timer_settings = {"study": 25, "short_break": 5, "long_break":15}
+
+@onready var window_size: Vector2i = Vector2i(640, 640)
 
 signal any_key_pressed
 
@@ -36,6 +42,7 @@ func caught_fish(fish: String, new_fish: bool):
 	
 	fishing_streak += 1
 
+	print(inventory_fish)
 	fish_caught.emit(fish, new_fish)
 
 	

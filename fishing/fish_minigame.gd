@@ -81,9 +81,9 @@ func go_fishing():
 
 func select_fish(difficulty):
 	var trash = ["seaweed"]
-	var basic = ["butterfish", "brook_trout", "coral_trout", "regal_blue_tang"]
-	var uncommon = ["blowfish", "moon_jellyfish"]
-	var legendary = ["leafy_seadragon", "deep_sea_isopod"]
+	var basic = ["butterfish", "brook_trout", "coral_trout", "regal_blue_tang", "flounder", "koi"]
+	var uncommon = ["moon_jellyfish", "horseshoe_crab", "humuhumunukunukuapua'a", "spotted_eagle_ray", "sockeye_salmon"]
+	var legendary = ["leafy_seadragon", "deep_sea_isopod", "sunfish"]
 	
 	if difficulty < 8:
 		if randi_range(1,10) == 5:
