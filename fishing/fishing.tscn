@@ -1,13 +1,12 @@
 [gd_scene format=4 uid="uid://bnrcf87dgowbp"]
 
 [ext_resource type="Script" uid="uid://b6slsl75h651r" path="res://fishing/fish_minigame.gd" id="1_sqpqj"]
-[ext_resource type="Script" uid="uid://hwnd6o6uul06" path="res://fishing/Globals.gd" id="2_86gsk"]
 [ext_resource type="Texture2D" uid="uid://dp2q7aj0cgvwb" path="res://art/fishtankframe.png" id="3_78wfu"]
 [ext_resource type="Texture2D" uid="uid://bjtvajey85ywi" path="res://art/black_square.png" id="4_4r7pl"]
 [ext_resource type="Texture2D" uid="uid://cjw7j6dsa6rrx" path="res://art/test_surprise.png" id="5_7tvle"]
 [ext_resource type="Texture2D" uid="uid://m6xcw0ytqhhg" path="res://art/new_sign.png" id="6_khi3d"]
 [ext_resource type="Shader" uid="uid://cimyog6cr8wpl" path="res://art/outline.gdshader" id="7_42ve5"]
-[ext_resource type="LabelSettings" uid="uid://bkn2bfg2pvwmc" path="res://small_label_settings.tres" id="9_sqpqj"]
+[ext_resource type="LabelSettings" uid="uid://bkn2bfg2pvwmc" path="res://art/small_label_settings.tres" id="9_sqpqj"]
 [ext_resource type="Script" uid="uid://ba21ntmmdf3yd" path="res://fishing/label.gd" id="10_7nlyu"]
 [ext_resource type="Script" uid="uid://cb1w4mp40cynw" path="res://fishing/canvas_layer.gd" id="11_78wfu"]
 [ext_resource type="Texture2D" uid="uid://b68o268yrql63" path="res://art/fish/sunfish.png" id="11_86gsk"]
@@ -30,9 +29,6 @@ anchors_preset = 0
 offset_right = 128.0
 offset_bottom = 128.0
 script = ExtResource("1_sqpqj")
-
-[node name="Globals" type="Node2D" parent="." unique_id=223343525]
-script = ExtResource("2_86gsk")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1140997314]
 stream = SubResource("AudioStreamMP3_uitoa")
