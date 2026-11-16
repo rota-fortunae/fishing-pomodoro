@@ -1,7 +1,17 @@
 [gd_scene format=3 uid="uid://dd7dfhwokejoj"]
 
 [ext_resource type="Texture2D" uid="uid://dp2q7aj0cgvwb" path="res://art/fishtankframe.png" id="1_awalw"]
-[ext_resource type="Texture2D" uid="uid://b68o268yrql63" path="res://art/fish/sunfish.png" id="2_mqj4r"]
+[ext_resource type="Script" uid="uid://pvqqxilvaf7r" path="res://aquarium/aquarium.gd" id="1_pm7mj"]
+[ext_resource type="Texture2D" uid="uid://cnkascgjnufrr" path="res://art/fish/sockeye_salmon.png" id="3_pm7mj"]
+[ext_resource type="Script" uid="uid://dcjqk8qhu3lwd" path="res://aquarium/test_fish.gd" id="3_tdke6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hxrmi"]
+radius = 8.0
+height = 39.999992
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ip871"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hxrmi"]
 
 [node name="Aquarium" type="Control" unique_id=248952296]
 layout_mode = 3
@@ -10,6 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_pm7mj")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1716307161]
 layout_mode = 1
@@ -24,6 +35,28 @@ patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 15
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2075017166]
-position = Vector2(65, 83)
-texture = ExtResource("2_mqj4r")
+[node name="TestFish" type="CharacterBody2D" parent="." unique_id=2127725071]
+position = Vector2(30, 72)
+collision_mask = 0
+script = ExtResource("3_tdke6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TestFish" unique_id=462994869]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_hxrmi")
+
+[node name="Sprite2D" type="Sprite2D" parent="TestFish" unique_id=2075017166]
+texture = ExtResource("3_pm7mj")
+
+[node name="LeftWall" type="RigidBody2D" parent="." unique_id=1936030319]
+
+[node name="LeftWall" type="CollisionShape2D" parent="LeftWall" unique_id=840460076]
+position = Vector2(3, 140)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_ip871")
+
+[node name="RightWall" type="RigidBody2D" parent="." unique_id=836077166]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall" unique_id=1457548428]
+position = Vector2(637, 162)
+rotation = -1.5707964
+shape = SubResource("WorldBoundaryShape2D_hxrmi")
