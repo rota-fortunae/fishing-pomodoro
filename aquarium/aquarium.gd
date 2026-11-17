@@ -27,6 +27,7 @@ func spawn_fish():
 	fish.position = Vector2(20, 20 )
 	#spawnposition varied on y axis and confined to border on x axis
 	#randomized speed
+	#rantomize direction that they start? 
 	
 	fish.get_node("Sprite2D").texture = load("res://art/fish/" + DELETELATER[randi_range(0, 2)] + ".png")
 	var sprite_size = fish.get_node("Sprite2D").get_rect().size

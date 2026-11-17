@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cnkascgjnufrr" path="res://art/fish/sockeye_salmon.png" id="2_7myso"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hxrmi"]
+resource_local_to_scene = true
 radius = 8.0
 height = 39.999992
 
