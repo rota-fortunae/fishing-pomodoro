@@ -3,18 +3,17 @@
 [ext_resource type="Script" uid="uid://dcjqk8qhu3lwd" path="res://aquarium/test_fish.gd" id="1_6ac6s"]
 [ext_resource type="Texture2D" uid="uid://cnkascgjnufrr" path="res://art/fish/sockeye_salmon.png" id="2_7myso"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hxrmi"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tdke6"]
 resource_local_to_scene = true
-radius = 8.0
-height = 39.999992
+size = Vector2(16.000002, 40)
 
 [node name="AquariumFish" type="CharacterBody2D" unique_id=1245711210]
 collision_layer = 0
 script = ExtResource("1_6ac6s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=925392035]
-rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_hxrmi")
+position = Vector2(0, -2.3841858e-07)
+shape = SubResource("RectangleShape2D_tdke6")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1208169904]
 texture = ExtResource("2_7myso")

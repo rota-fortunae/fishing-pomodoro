@@ -23,6 +23,5 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	if is_on_wall():
-		print("collided")
 		direction *= -1
 		sprite.flip_h = (direction < 0)

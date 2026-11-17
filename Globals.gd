@@ -10,12 +10,14 @@ extends Node2D
 @onready var timer_settings = {"study": 25, "short_break": 5, "long_break":15}
 @onready var window_size: Vector2i = Vector2i(640, 640)
 @onready var fishing_streak = 0
+@onready var fish_speed = 100
 
 @onready var save_dict = {
 	"inventory_fish": inventory_fish,
 	"timer_settings": timer_settings,
 	"window_size": window_size,
-	"fishing_streak": fishing_streak
+	"fishing_streak": fishing_streak,
+	"fish_speed" : fish_speed
 }
 
 const SAVE_DIR = "user://save_data/"
@@ -53,7 +55,8 @@ func save_game() -> void:
 		"inventory_fish": inventory_fish,
 		"timer_settings": timer_settings,
 		"window_size": {"x": window_size.x, "y": window_size.y},
-		"fishing_streak": fishing_streak
+		"fishing_streak": fishing_streak,
+		"fish_speed" : fish_speed
 	}
 
 	var save_file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
@@ -80,6 +83,7 @@ func load_game() -> void:
 		inventory_fish = saved_data.get("inventory_fish", inventory_fish)
 		timer_settings = saved_data.get("timer_settings", timer_settings)
 		fishing_streak = int(saved_data.get("fishing_streak", fishing_streak))
+		fish_speed = int(saved_data.get("fish_speed", fish_speed))
 		
 		if saved_data.has("window_size"):
 			var ws = saved_data["window_size"]

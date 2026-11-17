@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://dp2q7aj0cgvwb" path="res://art/fishtankframe.png" id="1_awalw"]
 [ext_resource type="Script" uid="uid://pvqqxilvaf7r" path="res://aquarium/aquarium.gd" id="1_pm7mj"]
-[ext_resource type="PackedScene" uid="uid://dr2bmv1hk16hn" path="res://aquarium/aquarium_fish.tscn" id="3_41wxw"]
 [ext_resource type="FontFile" uid="uid://cs8us738dhk7f" path="res://art/TinyUnicode.ttf" id="5_41wxw"]
 [ext_resource type="Script" uid="uid://bk68e5x3io5yk" path="res://aquarium/pomodoro_timer.gd" id="5_c4gj4"]
 
@@ -36,9 +35,6 @@ patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 15
 
-[node name="AquariumFish" parent="." unique_id=1245711210 instance=ExtResource("3_41wxw")]
-position = Vector2(30, 72)
-
 [node name="LeftWall" type="StaticBody2D" parent="." unique_id=926474811]
 
 [node name="LeftWall" type="CollisionShape2D" parent="LeftWall" unique_id=840460076]
@@ -55,6 +51,7 @@ shape = SubResource("WorldBoundaryShape2D_hxrmi")
 debug_color = Color(0.85631895, 0.28494865, 0.75924885, 0.41960785)
 
 [node name="PomodoroTimer" type="Control" parent="." unique_id=2012236083]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
