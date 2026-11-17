@@ -43,6 +43,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+
+
 func save_game() -> void:
 	if not DirAccess.dir_exists_absolute(SAVE_DIR):
 		DirAccess.make_dir_recursive_absolute(SAVE_DIR)

@@ -2,16 +2,17 @@
 
 [ext_resource type="Texture2D" uid="uid://dp2q7aj0cgvwb" path="res://art/fishtankframe.png" id="1_awalw"]
 [ext_resource type="Script" uid="uid://pvqqxilvaf7r" path="res://aquarium/aquarium.gd" id="1_pm7mj"]
-[ext_resource type="Texture2D" uid="uid://cnkascgjnufrr" path="res://art/fish/sockeye_salmon.png" id="3_pm7mj"]
-[ext_resource type="Script" uid="uid://dcjqk8qhu3lwd" path="res://aquarium/test_fish.gd" id="3_tdke6"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hxrmi"]
-radius = 8.0
-height = 39.999992
+[ext_resource type="PackedScene" uid="uid://dr2bmv1hk16hn" path="res://aquarium/aquarium_fish.tscn" id="3_41wxw"]
+[ext_resource type="FontFile" uid="uid://cs8us738dhk7f" path="res://art/TinyUnicode.ttf" id="5_41wxw"]
+[ext_resource type="Script" uid="uid://bk68e5x3io5yk" path="res://aquarium/pomodoro_timer.gd" id="5_c4gj4"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ip871"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hxrmi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ip871"]
+font = ExtResource("5_41wxw")
+font_size = 64
 
 [node name="Aquarium" type="Control" unique_id=248952296]
 layout_mode = 3
@@ -35,28 +36,53 @@ patch_margin_top = 10
 patch_margin_right = 10
 patch_margin_bottom = 15
 
-[node name="TestFish" type="CharacterBody2D" parent="." unique_id=2127725071]
+[node name="AquariumFish" parent="." unique_id=1245711210 instance=ExtResource("3_41wxw")]
 position = Vector2(30, 72)
-collision_mask = 0
-script = ExtResource("3_tdke6")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TestFish" unique_id=462994869]
-rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_hxrmi")
-
-[node name="Sprite2D" type="Sprite2D" parent="TestFish" unique_id=2075017166]
-texture = ExtResource("3_pm7mj")
-
-[node name="LeftWall" type="RigidBody2D" parent="." unique_id=1936030319]
+[node name="LeftWall" type="StaticBody2D" parent="." unique_id=926474811]
 
 [node name="LeftWall" type="CollisionShape2D" parent="LeftWall" unique_id=840460076]
-position = Vector2(3, 140)
+position = Vector2(3, 0)
 rotation = 1.5707964
 shape = SubResource("WorldBoundaryShape2D_ip871")
 
-[node name="RightWall" type="RigidBody2D" parent="." unique_id=836077166]
+[node name="RightWall" type="StaticBody2D" parent="." unique_id=1011265348]
+position = Vector2(637, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall" unique_id=1457548428]
-position = Vector2(637, 162)
 rotation = -1.5707964
 shape = SubResource("WorldBoundaryShape2D_hxrmi")
+debug_color = Color(0.85631895, 0.28494865, 0.75924885, 0.41960785)
+
+[node name="PomodoroTimer" type="Control" parent="." unique_id=2012236083]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_c4gj4")
+
+[node name="Timer" type="Timer" parent="PomodoroTimer" unique_id=96829262]
+
+[node name="Label" type="Label" parent="PomodoroTimer" unique_id=396801986]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = -25.0
+offset_right = 44.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "67:67"
+label_settings = SubResource("LabelSettings_ip871")
