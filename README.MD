@@ -16,3 +16,9 @@ A study timer that lets you fish during breaks to customize your study time!
     - timer settings (including long and short breaks)
     - audio (seperate music, sfx, and alarm)
     - window size fullscreen v.s. windowed, make windowed dragable
+- fish settings
+    - fish speed 
+    - spawn rate
+    - which fish are displayed
+    - water color
+    - tank decor/frame

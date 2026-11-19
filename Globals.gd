@@ -12,6 +12,9 @@ extends Node2D
 @onready var fishing_streak = 0
 @onready var fish_speed = 100
 
+#could possibly add fish spawn frequency? 
+#adjust spawn and despawn ratios in aquarium.gd
+
 @onready var save_dict = {
 	"inventory_fish": inventory_fish,
 	"timer_settings": timer_settings,
