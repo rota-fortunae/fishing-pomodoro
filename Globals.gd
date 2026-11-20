@@ -93,8 +93,6 @@ func load_game() -> void:
 			window_size = Vector2i(int(ws["x"]), int(ws["y"]))
 
 
-
-
 signal fish_caught(fish_name: String, is_new: bool)
 
 func caught_fish(fish: String, new_fish: bool):

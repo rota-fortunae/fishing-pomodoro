@@ -1,0 +1,28 @@
+sunfish error still there
+fish are more dense in the top square
+fish spawn or dont get cut off before their fins go over the tank edge
+diffrentiate between reg fish, crawler, and stationary 
+should fish be capable of drifting up and down?
+
+do you need collision boxes on the top and bottom of tank?
+
+menu / setting scene-- make it look like a book??? 
+extra setting: position of the timer label? 
+extra setting: custom music? 
+
+is it ok for the pomodoro timer to be mixels
+
+fish adjustment -- make them slow down near the walls of the tank 
+
+additional sprites for fish that need them
+	seaweed, horseshoe crab
+	manta ray if you have enough time (prob not)
+
+audio
+beep when pomodoro timer reaches 5 secs
+music like mario's underwater theme for the aquarium
+click noises for everything
+fix the fishing noises they sound bad
+line cast noise
+reel in cast noise
+page flip for opening the menu

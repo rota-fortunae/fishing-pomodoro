@@ -10,6 +10,10 @@
 font = ExtResource("1_8ca6k")
 font_size = 64
 
+[sub_resource type="LabelSettings" id="LabelSettings_ip871"]
+font = ExtResource("1_8ca6k")
+font_size = 22
+
 [node name="PomodoroTimer" type="Control" unique_id=153619475]
 layout_mode = 3
 anchors_preset = 8
@@ -50,6 +54,16 @@ texture_normal = ExtResource("4_fd7xy")
 texture_pressed = ExtResource("4_fd7xy")
 
 [node name="Timer" type="Timer" parent="." unique_id=1093827956]
+
+[node name="RoundDisplay" type="Label" parent="." unique_id=1974768271]
+layout_mode = 0
+offset_left = -23.0
+offset_top = 10.0
+offset_right = 17.0
+offset_bottom = 33.0
+text = "6/7"
+label_settings = SubResource("LabelSettings_ip871")
+horizontal_alignment = 1
 
 [connection signal="toggled" from="Play" to="." method="_on_play_toggled"]
 [connection signal="pressed" from="Skip" to="." method="_on_skip_pressed"]

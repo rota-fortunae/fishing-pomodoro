@@ -5,6 +5,7 @@ extends Control
 @onready var study_time = Globals.timer_settings["study"] 
 
 @onready var timer = $Timer
+@onready var pomodoro_round = 1
 
 @export var on_break = false 
 @export var playing = false
@@ -18,7 +19,8 @@ func _ready() -> void:
 		timer.wait_time = short_break * 60
 	else:
 		timer.wait_time = study_time * 60
-	
+		
+	$RoundDisplay.text = "1/4"
 	$Label.text = "%02d:%02d" % [study_time, 00]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -48,9 +50,21 @@ func _on_timer_timeout() -> void:
 		break_ended.emit()
 		on_break = false 
 		timer.wait_time = study_time * 60
+		
+		pomodoro_round += 1
+		if pomodoro_round == 5: 
+			pomodoro_round = 1
+		$RoundDisplay.text = str(pomodoro_round)+"/4"
+		
 		$Label.text = "%02d:%02d" % [study_time, 00]
 	else:
 		study_ended.emit()
 		on_break = true
-		timer.wait_time = short_break * 60
-		$Label.text = "%02d:%02d" % [short_break, 00]
+		if pomodoro_round > 3:
+			timer.wait_time = long_break * 60
+			$Label.text = "%02d:%02d" % [long_break, 00]
+		else: 
+			timer.wait_time = short_break * 60
+			$Label.text = "%02d:%02d" % [short_break, 00]
+			
+		
