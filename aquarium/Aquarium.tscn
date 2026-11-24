@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://dp2q7aj0cgvwb" path="res://art/fishtankframe.png" id="1_awalw"]
 [ext_resource type="Script" uid="uid://pvqqxilvaf7r" path="res://aquarium/aquarium.gd" id="1_pm7mj"]
-[ext_resource type="PackedScene" uid="uid://wtv7yy81nea3" path="res://pomodoro/pomodoro_timer.tscn" id="3_pm7mj"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ip871"]
 
@@ -44,18 +43,3 @@ position = Vector2(637, 0)
 rotation = -1.5707964
 shape = SubResource("WorldBoundaryShape2D_hxrmi")
 debug_color = Color(0.85631895, 0.28494865, 0.75924885, 0.41960785)
-
-[node name="PomodoroTimer" parent="." unique_id=153619475 instance=ExtResource("3_pm7mj")]
-z_index = 1
-layout_mode = 0
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 66.0
-offset_top = 36.0
-offset_right = 66.0
-offset_bottom = 36.0
-grow_horizontal = 1
-grow_vertical = 1

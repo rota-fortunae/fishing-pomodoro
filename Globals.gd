@@ -12,6 +12,9 @@ extends Node2D
 @onready var fishing_streak = 0
 @onready var fish_speed = 100
 
+const POMODORO_SCENE = preload("res://pomodoro/pomodoro_timer.tscn")
+var pomodoro_timer :Control
+
 #could possibly add fish spawn frequency? 
 #adjust spawn and despawn ratios in aquarium.gd
 
@@ -43,6 +46,12 @@ func _input(event: InputEvent) -> void:
 func _ready() -> void:
 	get_tree().set_auto_accept_quit(false)
 	load_game()
+	
+	var ui_layer = CanvasLayer.new()
+	ui_layer.layer = 2
+	add_child(ui_layer)
+	pomodoro_timer = POMODORO_SCENE.instantiate()
+	ui_layer.add_child(pomodoro_timer)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -107,5 +116,13 @@ func caught_fish(fish: String, new_fish: bool):
 	print(inventory_fish)
 	fish_caught.emit(fish, new_fish)
 
+func switch_to_aquarium(PomodoroTimer: Control):
+	print("aquariuming")
+	get_tree().change_scene_to_file("res://aquarium/Aquarium.tscn")
 	
+
+func switch_to_fishing(PomodoroTimer: Control):
+	print("fishinging")
+	get_tree().change_scene_to_file("res://fishing/fishing.tscn")
+
 	

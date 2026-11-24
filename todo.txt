@@ -7,6 +7,11 @@ should fish be capable of drifting up and down?
 do you need collision boxes on the top and bottom of tank?
 
 menu / setting scene-- make it look like a book??? 
+fish - inventory (select multiple) 
+	can choose to sell, display, hide, or combine?
+shop
+basic settings 
+
 extra setting: position of the timer label? 
 extra setting: custom music? 
 

@@ -47,7 +47,7 @@ func _on_play_toggled(toggled_on: bool) -> void:
 
 func _on_timer_timeout() -> void:
 	if on_break:
-		break_ended.emit()
+		Globals.switch_to_aquarium(self)
 		on_break = false 
 		timer.wait_time = study_time * 60
 		
@@ -58,7 +58,7 @@ func _on_timer_timeout() -> void:
 		
 		$Label.text = "%02d:%02d" % [study_time, 00]
 	else:
-		study_ended.emit()
+		Globals.switch_to_fishing(self)
 		on_break = true
 		if pomodoro_round > 3:
 			timer.wait_time = long_break * 60
@@ -67,4 +67,3 @@ func _on_timer_timeout() -> void:
 			timer.wait_time = short_break * 60
 			$Label.text = "%02d:%02d" % [short_break, 00]
 			
-		
