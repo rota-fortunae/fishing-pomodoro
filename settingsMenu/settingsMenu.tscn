@@ -1,7 +1,12 @@
 [gd_scene format=3 uid="uid://smy63o7whjfm"]
 
+[ext_resource type="Script" uid="uid://dd58haq2rgifs" path="res://settingsMenu/settings_menu.gd" id="1_d4mmu"]
 [ext_resource type="Texture2D" uid="uid://geu6ohyhl8w3" path="res://art/menu.png" id="1_qfv5y"]
 [ext_resource type="Texture2D" uid="uid://cnkascgjnufrr" path="res://art/fish/sockeye_salmon.png" id="2_mr31o"]
+[ext_resource type="Texture2D" uid="uid://duhb2cxpdwpv" path="res://art/fish_book_frame.png" id="3_6tsua"]
+[ext_resource type="Texture2D" uid="uid://b68o268yrql63" path="res://art/fish/sunfish.png" id="3_7hdjn"]
+[ext_resource type="Texture2D" uid="uid://dbfhymm8bwpia" path="res://art/highlight_rect.png" id="5_6tsua"]
+[ext_resource type="Texture2D" uid="uid://cxn8f3v6u8kxn" path="res://art/right_arrow.png" id="6_6tsua"]
 
 [node name="SettingsMenu" type="Control" unique_id=830095350]
 layout_mode = 3
@@ -10,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_d4mmu")
 
 [node name="Background" type="TextureRect" parent="." unique_id=209899175]
 layout_mode = 0
@@ -19,44 +25,128 @@ texture = ExtResource("1_qfv5y")
 
 [node name="GridContainer" type="GridContainer" parent="." unique_id=43505478]
 layout_mode = 0
-offset_left = 17.0
-offset_top = 9.0
-offset_right = 57.0
-offset_bottom = 62.0
-columns = 2
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 56.0
+offset_bottom = 65.0
+columns = 4
 
-[node name="TextureRect" type="TextureRect" parent="GridContainer" unique_id=1547832109]
-custom_minimum_size = Vector2(15, 15)
-clip_contents = true
+[node name="InventoryFishDisplay" type="TextureRect" parent="GridContainer" unique_id=224809813]
 layout_mode = 2
-texture = ExtResource("2_mr31o")
-expand_mode = 1
-stretch_mode = 2
+texture = ExtResource("3_6tsua")
 
-[node name="TextureRect2" type="TextureRect" parent="GridContainer" unique_id=2100996787]
-custom_minimum_size = Vector2(15, 15)
-layout_mode = 2
+[node name="FishSprite" type="Sprite2D" parent="GridContainer/InventoryFishDisplay" unique_id=370003137]
 texture = ExtResource("2_mr31o")
-expand_mode = 1
-stretch_mode = 1
+centered = false
+region_enabled = true
+region_rect = Rect2(24, 0, 16, 16)
 
-[node name="TextureRect3" type="TextureRect" parent="GridContainer" unique_id=610144784]
-custom_minimum_size = Vector2(15, 15)
-layout_mode = 2
-texture = ExtResource("2_mr31o")
-expand_mode = 1
-stretch_mode = 1
+[node name="Highlight" type="TextureRect" parent="GridContainer/InventoryFishDisplay" unique_id=1187593187]
+visible = false
+modulate = Color(1, 1, 1, 0.52156866)
+custom_minimum_size = Vector2(16, 16)
+custom_maximum_size = Vector2(16, 16)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_6tsua")
 
-[node name="TextureRect4" type="TextureRect" parent="GridContainer" unique_id=1854767610]
-custom_minimum_size = Vector2(15, 15)
+[node name="InventoryFishDisplay5" type="TextureRect" parent="GridContainer" unique_id=1645188477]
 layout_mode = 2
-texture = ExtResource("2_mr31o")
-expand_mode = 1
-stretch_mode = 1
+texture = ExtResource("3_6tsua")
 
-[node name="TextureRect5" type="TextureRect" parent="GridContainer" unique_id=777268405]
-custom_minimum_size = Vector2(15, 15)
-layout_mode = 2
+[node name="FishSprite" type="Sprite2D" parent="GridContainer/InventoryFishDisplay5" unique_id=2001620634]
 texture = ExtResource("2_mr31o")
-expand_mode = 1
-stretch_mode = 1
+centered = false
+region_enabled = true
+region_rect = Rect2(24, 0, 16, 16)
+
+[node name="Highlight" type="TextureRect" parent="GridContainer/InventoryFishDisplay5" unique_id=1987455106]
+visible = false
+modulate = Color(1, 1, 1, 0.52156866)
+custom_minimum_size = Vector2(16, 16)
+custom_maximum_size = Vector2(16, 16)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_6tsua")
+
+[node name="InventoryFishDisplay4" type="TextureRect" parent="GridContainer" unique_id=2068158]
+layout_mode = 2
+texture = ExtResource("3_6tsua")
+
+[node name="FishSprite" type="Sprite2D" parent="GridContainer/InventoryFishDisplay4" unique_id=1638760953]
+texture = ExtResource("2_mr31o")
+centered = false
+region_enabled = true
+region_rect = Rect2(24, 0, 16, 16)
+
+[node name="Highlight" type="TextureRect" parent="GridContainer/InventoryFishDisplay4" unique_id=2114427323]
+visible = false
+modulate = Color(1, 1, 1, 0.52156866)
+custom_minimum_size = Vector2(16, 16)
+custom_maximum_size = Vector2(16, 16)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_6tsua")
+
+[node name="InventoryFishDisplay3" type="TextureRect" parent="GridContainer" unique_id=1804949105]
+layout_mode = 2
+texture = ExtResource("3_6tsua")
+
+[node name="FishSprite" type="Sprite2D" parent="GridContainer/InventoryFishDisplay3" unique_id=286407698]
+texture = ExtResource("2_mr31o")
+centered = false
+region_enabled = true
+region_rect = Rect2(24, 0, 16, 16)
+
+[node name="Highlight" type="TextureRect" parent="GridContainer/InventoryFishDisplay3" unique_id=415199934]
+visible = false
+modulate = Color(1, 1, 1, 0.52156866)
+custom_minimum_size = Vector2(16, 16)
+custom_maximum_size = Vector2(16, 16)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_6tsua")
+
+[node name="InventoryFishDisplay2" type="TextureRect" parent="GridContainer" unique_id=862346330]
+layout_mode = 2
+texture = ExtResource("3_6tsua")
+
+[node name="FishSprite" type="Sprite2D" parent="GridContainer/InventoryFishDisplay2" unique_id=882766811]
+texture = ExtResource("2_mr31o")
+centered = false
+region_enabled = true
+region_rect = Rect2(24, 0, 16, 16)
+
+[node name="Highlight" type="TextureRect" parent="GridContainer/InventoryFishDisplay2" unique_id=1265479342]
+visible = false
+modulate = Color(1, 1, 1, 0.52156866)
+custom_minimum_size = Vector2(16, 16)
+custom_maximum_size = Vector2(16, 16)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_6tsua")
+
+[node name="ReferenceRect2" type="TextureRect" parent="GridContainer" unique_id=1614808531]
+layout_mode = 2
+texture = ExtResource("3_6tsua")
+
+[node name="Sprite2D" type="Sprite2D" parent="GridContainer/ReferenceRect2" unique_id=583857267]
+texture = ExtResource("3_7hdjn")
+centered = false
+region_enabled = true
+region_rect = Rect2(40, 32, 16, 16)
+
+[node name="Exit" type="TextureButton" parent="." unique_id=2028620826]
+layout_mode = 0
+offset_left = 98.0
+offset_top = 85.0
+offset_right = 138.0
+offset_bottom = 125.0
+texture_normal = ExtResource("6_6tsua")
+
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

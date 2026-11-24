@@ -41,7 +41,6 @@ func _process(delta: float) -> void:
 	pass
 
 	
-	
 func spawn_one_fish(fish_name : String):
 	
 	

@@ -19,3 +19,6 @@ func _on_fish_caught(fish: String, new_fish: bool) -> void:
 	$FishedScreen.visible = false
 	$Surprise.visible = false
 	
+func _on_menu_button_pressed() -> void:
+	print("triggered")
+	Globals.open_menu()

@@ -15,6 +15,9 @@ extends Node2D
 const POMODORO_SCENE = preload("res://pomodoro/pomodoro_timer.tscn")
 var pomodoro_timer :Control
 
+const MENU_SCENE = preload("res://settingsMenu/settingsMenu.tscn")
+var settings_menu :Control 
+
 #could possibly add fish spawn frequency? 
 #adjust spawn and despawn ratios in aquarium.gd
 
@@ -52,12 +55,17 @@ func _ready() -> void:
 	add_child(ui_layer)
 	pomodoro_timer = POMODORO_SCENE.instantiate()
 	ui_layer.add_child(pomodoro_timer)
+	
+	settings_menu = MENU_SCENE.instantiate()
+	ui_layer.add_child(settings_menu)
+	settings_menu.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
-
+func open_menu():
+	settings_menu.visible = true
 
 func save_game() -> void:
 	if not DirAccess.dir_exists_absolute(SAVE_DIR):
