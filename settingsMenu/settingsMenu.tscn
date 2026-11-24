@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://smy63o7whjfm"]
 
+[ext_resource type="Texture2D" uid="uid://geu6ohyhl8w3" path="res://art/menu.png" id="1_qfv5y"]
+[ext_resource type="Texture2D" uid="uid://cnkascgjnufrr" path="res://art/fish/sockeye_salmon.png" id="2_mr31o"]
+
 [node name="SettingsMenu" type="Control" unique_id=830095350]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +10,53 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="." unique_id=209899175]
+layout_mode = 0
+offset_right = 118.0
+offset_bottom = 106.0
+texture = ExtResource("1_qfv5y")
+
+[node name="GridContainer" type="GridContainer" parent="." unique_id=43505478]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 9.0
+offset_right = 57.0
+offset_bottom = 62.0
+columns = 2
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer" unique_id=1547832109]
+custom_minimum_size = Vector2(15, 15)
+clip_contents = true
+layout_mode = 2
+texture = ExtResource("2_mr31o")
+expand_mode = 1
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="GridContainer" unique_id=2100996787]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+texture = ExtResource("2_mr31o")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="GridContainer" unique_id=610144784]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+texture = ExtResource("2_mr31o")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="TextureRect4" type="TextureRect" parent="GridContainer" unique_id=1854767610]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+texture = ExtResource("2_mr31o")
+expand_mode = 1
+stretch_mode = 1
+
+[node name="TextureRect5" type="TextureRect" parent="GridContainer" unique_id=777268405]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+texture = ExtResource("2_mr31o")
+expand_mode = 1
+stretch_mode = 1
